@@ -16,11 +16,11 @@ def purgeClozes(self):
     mw.reset()
 
 def onAlert(self):
-    self.web.eval("wrap('\\\\alert\{', '\}');")
+    self.web.eval("wrap('<del>', '</del>');")
 
 def onSetupShortcuts(cuts, self):
     cuts += [("Ctrl+J", self.purgeClozes),
-             ("Ctrl+W", self.onAlert)]
+             ("Ctrl+Shift+A", self.onAlert)]
 
 Editor.purgeClozes = purgeClozes
 Editor.onAlert = onAlert
